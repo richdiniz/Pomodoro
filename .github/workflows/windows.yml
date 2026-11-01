@@ -1,3 +1,4 @@
+```yaml
 name: Build LuiX-System Pomodoro for Windows
 
 on:
@@ -26,14 +27,14 @@ jobs:
           New-Item -ItemType Directory -Force build/classes
           javac -d build/classes src/Pomodoro.java src/PomodoroApp.java
           Copy-Item src/logo.png build/classes/src/logo.png
-                    jar --create --file build/PomodoroApp.jar --main-class src.PomodoroApp -C build/classes .
+          jar --create --file build/PomodoroApp.jar --main-class src.PomodoroApp -C build/classes .
           New-Item -ItemType Directory -Force build/package-input
           Copy-Item build/PomodoroApp.jar build/package-input/
 
       - name: Gerar instalador Windows
         shell: pwsh
         run: |
-                    New-Item -ItemType Directory -Force build/windows
+          New-Item -ItemType Directory -Force build/windows
           jpackage `
             --type exe `
             --name "LuiX-System-Pomodoro" `
@@ -50,3 +51,4 @@ jobs:
         with:
           name: LuiX-System-Pomodoro-Windows
           path: build/windows/*.exe
+```
