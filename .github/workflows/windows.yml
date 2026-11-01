@@ -26,22 +26,23 @@ jobs:
           New-Item -ItemType Directory -Force build/classes
           javac -d build/classes src/Pomodoro.java src/PomodoroApp.java
           Copy-Item src/logo.png build/classes/src/logo.png
-          jar --create --file build/PomodoroApp.jar --main-class src.PomodoroApp -C build/classes .
+                    jar --create --file build/PomodoroApp.jar --main-class src.PomodoroApp -C build/classes .
+          New-Item -ItemType Directory -Force build/package-input
+          Copy-Item build/PomodoroApp.jar build/package-input/
 
       - name: Gerar instalador Windows
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force build/windows
+                    New-Item -ItemType Directory -Force build/windows
           jpackage `
             --type exe `
             --name "LuiX-System-Pomodoro" `
             --app-version 1.0.0 `
             --description "Aplicativo Pomodoro para produtividade" `
             --vendor "LuiX-System" `
-            --input build `
+            --input build/package-input `
             --main-jar PomodoroApp.jar `
             --main-class src.PomodoroApp `
-            --icon src/logo.png `
             --dest build/windows
 
       - name: Disponibilizar instalador
