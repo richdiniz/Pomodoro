@@ -27,6 +27,7 @@ public class PomodoroApp extends JFrame {
             ImageIcon icone = new ImageIcon(getClass().getResource("logo.png"));
             setIconImage(icone.getImage());
         } catch (Exception e) {
+            System.out.println("Erro ao carregar ícone: " + e.getMessage());
             // Ícone padrão caso não encontre
         }
 

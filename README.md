@@ -1,4 +1,3 @@
-# Pomodoro
 primeiro projeto de 2026
 # 🍅 LuiX-System Pomodoro
 
@@ -81,3 +80,4 @@ Este projeto faz parte do meu aprendizado em programação, com foco no desenvol
 ---
 
 Projeto pessoal desenvolvido para fins de aprendizado e prática de programação.
+
