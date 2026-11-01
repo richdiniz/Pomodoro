@@ -1,4 +1,3 @@
-```yaml
 name: Build LuiX-System Pomodoro for Windows
 
 on:
@@ -51,4 +50,3 @@ jobs:
         with:
           name: LuiX-System-Pomodoro-Windows
           path: build/windows/*.exe
-```
